@@ -28,43 +28,49 @@ List of Allowed Functions and System Calls
 
 * <a href="https://man7.org/linux/man-pages/man3/getcwd.3.html"> getcwd </a> (man 3 getcwd)
 
-* getline (man 3 getline) 
+* <a href="https://linux.die.net/man/3/getline"> getline </a> (man 3 getline) 
 
-* isatty (man 3 isatty)
+* <a href="https://linux.die.net/man/2/getpid"> getpid </a> (man 2 getpid)
 
-* kill (man 2 kill)
+* <a href="https://linux.die.net/man/3/isatty"> isatty </a> (man 3 isatty)
 
-* malloc(man 3 malloc)
+* <a href="https://linux.die.net/man/2/kill"> kill </a> (man 2 kill)
 
-* open (man 2 open)
+* <a href="https://linux.die.net/man/3/malloc"> malloc </a> (man 3 malloc)
 
-* opendir (man 3 opendir)
+* <a href="https://linux.die.net/man/2/open"> open </a> (man 2 open)
 
-* perror (man 3 perror)
+* <a href="https://linux.die.net/man/3/opendir"> opendir </a> (man 3 opendir)
 
-* read (man 2 read)
+* <a href="https://linux.die.net/man/3/perror"> perror </a> (man 3 perror)
 
-* readdir (man 3 readdir)
+* <a href="https://linux.die.net/man/2/read"> read  </a> (man 2 read)
 
-* signal (man 2 signal)
+* <a href="https://linux.die.net/man/3/readdir"> readdir </a> (man 3 readdir)
 
-* stat (__xstat)(man 2 stat)
+* <a href="https://linux.die.net/man/2/signal"> signal </a> (man 2 signal)
 
-* lstat (__lxstat)(man 2 lstat)
+* <a href="https://linux.die.net/man/2/stat"> stat </a> (__xstat) (man 2 stat)
 
-* fstat (__fxstat)(man 2 fstat)
+* <a href="https://linux.die.net/man/2/lstat"> lstat </a> (__lxstat) (man 2 lstat)
 
-* strtok (man 3 strtok) 
+* <a href="https://linux.die.net/man/2/fstat"> fstat </a> (__fxstat) (man 2 fstat)
 
-* wait (man 2 wait)
+* <a href="https://linux.die.net/man/3/strtok"> strtok </a> (man 3 strtok)
 
-* waitpid (man 2 waitpid)
+* <a href="https://linux.die.net/man/2/wait"> wait </a> (man 2 wait)
 
-* wait3 (man 2 wait3)
+* <a href="https://linux.die.net/man/2/waitpid"> waitpid </a> (man 2 waitpid)
 
-* wait4 (man 2 wait4)
+* <a href="https://linux.die.net/man/2/wait3"> wait3 </a> (man 2 wait3)
 
-* write (man 2 write)
+* <a href="https://linux.die.net/man/2/wait4"> wait4 </a> (man 2 wait4)
+
+* <a href="https://linux.die.net/man/2/write"> write </a> (man 2 write)
+
+
+* <a href="https://linux.die.net/man/"> LINUX MAN PAGES </a>
+
 
 Compilation
 
@@ -74,6 +80,5 @@ gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
 
 AUTHORS
 
-Olabode Bodex
-
-Nathan Azibabhonomeni
+* Olabode Bodex
+* Nathan Azibabhonomeni
