@@ -26,7 +26,7 @@ List of Allowed Functions and System Calls
 
 * <a href="https://linux.die.net/man/3/free"> free </a> (man 3 free)
 
-* getcwd (man 3 getcwd)
+* <a href="https://man7.org/linux/man-pages/man3/getcwd.3.html"> getcwd </a> (man 3 getcwd)
 
 * getline (man 3 getline) 
 
