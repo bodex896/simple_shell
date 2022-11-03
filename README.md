@@ -8,15 +8,15 @@ List of Allowed Functions and System Calls
 
 * <a href="https://linux.die.net/man/2/access"> access </a> (man 2 access)
 
-* chdir (man 2 chdir)
+* <a href="https://man7.org/linux/man-pages/man2/chdir.2.html"> chdir </a> (man 2 chdir)
 
-* close (man 2 close)
+* <a href="https://man7.org/linux/man-pages/man2/close.2.html"> close </a> (man 2 close)
 
-* closedir (man 3 closedir)
+* <a href="https://linux.die.net/man/3/closedir"> closedir </a> (man 3 closedir)
 
-* execve (man 2 excve)
+* <a href="https://man7.org/linux/man-pages/man2/execve.2.html"> excve </a> (man 2 excve)
 
-* exit (man 3 exit)
+*  <a href="https://man7.org/linux/man-pages/man3/exit.3.html"> exit </a> (man 3 exit)
 
 * _exit (man 2 _exit)
 
