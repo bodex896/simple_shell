@@ -6,7 +6,7 @@ Project 0x16 - Simple Shell - A simple UNIX command interpreter that executes co
 
 List of Allowed Functions and System Calls
 
-* access (man 2 access)
+* <a href="https://linux.die.net/man/2/access"> access </a> (man 2 access)
 
 * chdir (man 2 chdir)
 
