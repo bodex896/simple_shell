@@ -18,11 +18,11 @@ List of Allowed Functions and System Calls
 
 *  <a href="https://man7.org/linux/man-pages/man3/exit.3.html"> exit </a> (man 3 exit)
 
-* _exit (man 2 _exit)
+* <a href="https://linux.die.net/man/2/_exit"> _exit </a> (man 2 _exit)
 
-* fflush (man 3 fflush)
+* <a href="https://linux.die.net/man/3/fflush"> fflush </a> (man 3 fflush)
 
-* fork (man 2 fork)
+* <a href="https://man7.org/linux/man-pages/man2/fork.2.html"> fork </a> (man 2 fork)
 
 * free (man 3 free)
 
