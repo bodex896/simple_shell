@@ -24,7 +24,7 @@ List of Allowed Functions and System Calls
 
 * <a href="https://man7.org/linux/man-pages/man2/fork.2.html"> fork </a> (man 2 fork)
 
-* free (man 3 free)
+* <a href="https://linux.die.net/man/3/free"> free </a> (man 3 free)
 
 * getcwd (man 3 getcwd)
 
