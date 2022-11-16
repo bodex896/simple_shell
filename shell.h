@@ -1,178 +1,156 @@
 #ifndef SHELL_H
+
 #define SHELL_H
 
-#include <stddef.h>
+
+
+/*libraries*/
+
+#include <stdio.h>
+
+#include <stdlib.h>
+
 #include <unistd.h>
 
-/**
- * struct list_p - singly linked list
- * @ptr: a malloced address
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- * for Holberton shell project
- */
-typedef struct list_p
-{
-	void *ptr;
-	struct list_p *next;
-} list_t;
+#include <string.h>
 
-int linum(int add);
+#include <sys/stat.h>
 
-char *get_prog_name(char *name);
+#include <errno.h>
 
-void my_error(char *command, int status, char *extra);
+#include <fcntl.h>
 
-void signal_handler(int sig);
+#include <sys/wait.h>
 
-void main_loop(char *filename);
+#include <sys/types.h>
 
-/* Below find the linked list functions for use with do_mem*/
-
-size_t __list_len(list_t *h);
-
-list_t *__add_node(list_t **head, void *ptr);
-
-list_t *__add_node_end(list_t **head, void *ptr);
-
-void __free_list(list_t *head);
-
-void __free_list_full(list_t *head);
-
-list_t *__get_node_at_index(list_t *head, unsigned int index);
-
-list_t *__insert_node_at_index(list_t **head, unsigned int idx, void *ptr);
-
-int __delete_node_at_index(list_t **head, unsigned int index);
-
-/* Above find the linked list functions for use with do_mem*/
-
-/**
- * struct list_p2 - singly linked list
- * @ptr: a malloced string
- * @next: points to the next node
- *
- * Description: singly linked list node structure
- * for Holberton shell project
- */
-typedef struct list_p2
-{
-	char *ptr;
-	struct list_p2 *next;
-} list_s;
+#include <stdbool.h>
 
 
-/* Below find the linked list functions */
 
-size_t list_len(list_s *h);
+/*string_handlers*/
 
-list_s *add_node(list_s **head, char *ptr);
+char *duplicate_str(char *str);
 
-list_s *add_node_end(list_s **head, char *ptr);
+char *check_str(char *str, int chr);
 
-void free_list(list_s *head);
-
-void free_list_full(list_s *head);
-
-list_s *get_node_at_index(list_s *head, unsigned int index);
-
-list_s *insert_node_at_index(list_s **head, unsigned int idx, char *ptr);
-
-int delete_node_at_index(list_s **head, unsigned int index);
-
-char **arrayify(list_s *);
-
-list_s *listify(char **);
-
-void free_double_array(char **);
-
-/* Above find the linked list functions */
-
-
-/* Below find the string functions */
+int _strlen(const char *str);
 
 int _strcmp(char *s1, char *s2);
 
-int _strlen(char *s);
-
-int word_count(char *str, char *delim);
-
-char *_strcat(char *s1, char *s2);
-
-char *_strcpy(char *dest, char *src);
-
-int _atoi(char *s);
-
-int sizeof_command(char **tokens);
-
-int _isdigit(int c);
-
-int has_newline(char *input);
-
-void shiftbuffer(char *input, int newline_index, int filled);
-
-char *_itoa(int num);
-
-char *_reverse(char *str, int n);
-
-char *_memset(char *s, char b, int n);
-
-/* Above find the string functions */
+int _strncmp(const char *first, const char *second, int n);
 
 
-void *do_mem(size_t size, void *ptr);
 
-void do_exit(int fd, char *msg, int code);
+/*command_handler*/
 
-ssize_t else_handle_input(char *lineptr, int stream, char *input, int filled);
+char *_getpath(void);
 
-ssize_t _getline(char *lineptr, int stream);
+char **tokenize(char *str);
 
-char **_strtok(char *str, char *delim);
+void exec_cmd(char *c, char **cmd);
 
-char **get_path();
+char *append_path(char *path, char *cmd);
 
-char *get_env_val(char *name);
+char *search_path(char **p, char *cmd);
 
-char *find_path(char **path, char *command);
 
-char **get_env();
 
-/* environment functions */
+/*built-ins*/
 
-char **do_env(char *x, char *y);
+void env_builtin(void);
 
-char *get_full_command(char *path, char *command);
+void logout(char **cmd, char *b);
 
-/* builtin functions */
+int is_builtin(char **cmd, char *b);
 
-int setenv_builtin(char **tokens);
+void prompt_printer(void);
 
-int unsetenv_builtin(char **tokens);
+void handle_sig(int n);
 
-int cd_builtin(char **tokens);
 
-char **get_builtins();
 
-int env_builtin(void);
+/*helper function*/
 
-/* execute functions */
+int cmd_type(char **cmd, char *b);
 
-int execute(char **tokens);
+void free_cmds(char **m);
 
-int exec_nb(char **tokens);
 
-int search_ops(char **tokens);
 
-int exec_builtin(char **tokens, int bcase);
+/*environment variables*/
 
-int check_access(char *comm, char *token);
+extern __sighandler_t signal(int __sig, __sighandler_t __handler);
 
-char *prep_execve(char *token);
+extern char **environ;
 
-/* file functions */
 
-char *read_textfile(char *filename);
 
-#endif /*SHELL_H*/
+/**
+ * struct builtins - Handles builtins
+ * @env: First member
+ * @exit: Second member
+ *
+ * Description: builtin commands
+ */
+
+struct builtins
+
+{
+
+	char *env;
+
+	char *exit;
+
+
+
+} builtins;
+
+
+
+
+
+/**
+ * struct info - Status info struct
+ * @final_exit: First member
+ * @ln_count: Second member
+ *
+ * Description: Used in error handling
+ */
+
+struct info
+
+{
+
+	int final_exit;
+
+	int ln_count;
+
+} info;
+
+
+
+
+
+/**
+ * struct flags - Holds flags
+ * @interactive: First member
+ *
+ * Description: used to handle
+ *
+ * boolean switches
+ */
+
+struct flags
+
+{
+
+	bool interactive;
+
+} flags;
+
+
+
+
+
+#endif /* __SHELL_H__ */
