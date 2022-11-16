@@ -23,7 +23,6 @@ int linum(int add)
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
  * _strcmp - compares two strings
  * @s1: the first string
  * @s2: the second string
@@ -148,9 +147,7 @@ char *_strcpy(char *dest, char *src)
 	}
 
 	return (dest);
-}prog (first execution)
- * Return: the name of the program
- */
+}
 char *get_prog_name(char *name)
 {
 	static char *ret;
