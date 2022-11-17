@@ -1,6 +1,6 @@
 #include "shell.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <stblib>
 
 /**
  * _strcmp - compares two strings
