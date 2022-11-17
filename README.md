@@ -1,1 +1,1 @@
-main.c
+man_simple_shell
